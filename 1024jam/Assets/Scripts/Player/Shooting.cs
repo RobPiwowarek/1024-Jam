@@ -3,11 +3,6 @@ using System.Collections;
 
 public class Shooting : MonoBehaviour {
     public GameObject[] missiles = new GameObject[10];
-
-	// Use this for initialization
-	void Start () {
-	    
-	}
 	
 	// Update is called once per frame
 	void Update () {
