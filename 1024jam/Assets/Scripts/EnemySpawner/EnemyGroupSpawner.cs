@@ -11,6 +11,31 @@ public class EnemyGroupSpawner: MonoBehaviour  {
         GenerateSingleEnemyGroup(0, 6);
     }
 
+    // give model enemy spread and corresponding enemy id and this should create
+    // such enemy group
+    public void GenerateSpecificGroup(bool[,] positions, int[,] ids)
+    {
+        clearGrid();
+        for (int x = 0; x < 8; x++)
+            for (int y = 0; y < 4; y++)
+            {
+                if (positions[x, y])
+                    Instantiate(enemies[ids[x, y]], new Vector3(2*x-7, 2*y+1), Quaternion.identity);
+            }
+    }         
+
+    public void GenerateRandomEnemyGroup(int number)
+    {
+        clearGrid();
+        for (int i = 0; i < number; i++)
+        {
+            int z = Random.Range(0, 10+1);
+            GenerateSingleEnemyGroup(z, 1);
+        }
+        
+    }
+
+    // use clearGrid() after this method
     public void GenerateSingleEnemyGroup(int id, int number)
     {
         int i = 0;
