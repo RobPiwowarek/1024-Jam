@@ -32,7 +32,7 @@ public class EnemyGroupSpawner: MonoBehaviour  {
             int z = Random.Range(0, 10+1);
             GenerateSingleEnemyGroup(z, 1);
         }
-        
+        clearGrid();
     }
 
     // use clearGrid() after this method

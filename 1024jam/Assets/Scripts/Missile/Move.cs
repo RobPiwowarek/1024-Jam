@@ -10,7 +10,6 @@ public class Move : MonoBehaviour {
 	public int ID = 0;
 	// Update is called once per frame
 	void Update () {
-
         this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 1);
 	}
 }
