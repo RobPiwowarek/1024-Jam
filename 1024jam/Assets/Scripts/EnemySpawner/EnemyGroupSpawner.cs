@@ -7,40 +7,35 @@ public class EnemyGroupSpawner: MonoBehaviour  {
     public GameObject[] enemies = new GameObject[10];
     void Start()
     {
-        for (int i = 0; i < 8; i++)
-            for (int j = 0; j < 4; j++)
-                grid[i, j] = false;
-
-        GenerateSingleEnemyGroup(6);
+        clearGrid();
+        GenerateSingleEnemyGroup(0, 6);
     }
 
-    public void GenerateSingleEnemyGroup(int number)
+    public void GenerateSingleEnemyGroup(int id, int number)
     {
         int i = 0;
         while (i < number)
         {
-            int x = Random.Range(MIN_X, MAX_X + 1);
-            int y = Random.Range(0, 4);
-
-            if (x % 2 == 0)
-                if (x < 0)
-                    ++x;
-                else
-                    --x;
-
-            if (y % 2 == 0)
-                ++y;
+            int x = selectXValue();
+            int y = selectYValue();
 
             if (isGridFull((x + 7) / 2, (y - 1) / 2))
                 continue;
             else
             {
-                Instantiate(enemies[0], new Vector3(x, y), Quaternion.identity);
+                Instantiate(enemies[id], new Vector3(x, y), Quaternion.identity);
                 grid[(x+7)/2, (y-1)/2] = true;
                 ++i;
             }
 
         }   
+    }
+
+    void clearGrid()
+    {
+        for (int i = 0; i < 8; i++)
+            for (int j = 0; j < 4; j++)
+                grid[i, j] = false;
     }
 
     bool isGridFull(int x, int y)
@@ -49,5 +44,28 @@ public class EnemyGroupSpawner: MonoBehaviour  {
             return true;
         else
             return false;
+    }
+
+    int selectYValue()
+    {
+        int y = Random.Range(0, 4);
+
+        if (y % 2 == 0)
+            ++y;
+
+        return y;
+    }
+
+    int selectXValue()
+    {
+        int x = Random.Range(MIN_X, MAX_X + 1);
+
+        if (x % 2 == 0)
+            if (x < 0)
+                ++x;
+            else
+                --x;
+
+        return x;
     }
 }
