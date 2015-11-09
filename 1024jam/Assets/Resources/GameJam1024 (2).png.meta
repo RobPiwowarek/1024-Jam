@@ -1,10 +1,19 @@
 fileFormatVersion: 2
 guid: 2b240ebca1aa5ce4ebc6a2176c2605fa
-timeCreated: 1447017824
+timeCreated: 1447097301
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Enemy6
+    21300002: GameJam1024 (2)_0
+    21300004: GameJam1024 (2)_1
+    21300006: GameJam1024 (2)_2
+    21300008: GameJam1024 (2)_3
+    21300010: GameJam1024 (2)_4
+    21300012: GameJam1024 (2)_5
+    21300014: GameJam1024 (2)_6
+    21300016: GameJam1024 (2)_7
+    21300018: GameJam1024 (2)_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -51,15 +60,95 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Enemy6
+    - name: GameJam1024 (2)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 35
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GameJam1024 (2)_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GameJam1024 (2)_2
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GameJam1024 (2)_3
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 1
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GameJam1024 (2)_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 1
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GameJam1024 (2)_5
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GameJam1024 (2)_6
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GameJam1024 (2)_7
       rect:
         serializedVersion: 2
         x: 249
-        y: 2
+        y: 1
         width: 27
-        height: 32
+        height: 33
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: GameJam1024 (2)_8
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 0
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
