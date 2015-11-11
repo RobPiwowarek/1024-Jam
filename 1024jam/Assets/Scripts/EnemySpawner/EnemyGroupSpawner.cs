@@ -8,7 +8,7 @@ public class EnemyGroupSpawner: MonoBehaviour  {
     void Start()
     {
         clearGrid();
-        GenerateSingleEnemyGroup(0, 6);
+        //GenerateSingleEnemyGroup(0, 6);
     }
 
     // give model enemy spread and corresponding enemy id and this should create
