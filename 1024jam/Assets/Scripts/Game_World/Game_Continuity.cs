@@ -22,9 +22,11 @@ public class Game_Continuity : MonoBehaviour {
 
 			Next_chapter = false;
 			chapter++;
+            Debug.Log("Chapter: " + chapter); 
 			if(chapter<=5){
 				StartCoroutine ("History", times_required[chapter]);
 			}
+            
 			Debug.Log("NextChapter");
 
 		}
