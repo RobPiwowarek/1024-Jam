@@ -8,6 +8,7 @@ public class Game_Continuity : MonoBehaviour {
 	public GameObject EnemyGridSpawner;
 	bool Next_chapter = false;
 	public GameObject EnemyGroupSpawner;
+	public bool grid = false;
 
 
 
@@ -41,8 +42,13 @@ public class Game_Continuity : MonoBehaviour {
 			break;
 		}
 		case 1: {
-			int i = time_required;
-
+			int i = (int)time_required;
+			EnemyGroupSpawner.GetComponent<EnemySpawnerSpawning>().SpawnEnemies(4,1);
+			yield return new WaitForSeconds(Random.Range(0.5f,2.5f));
+			EnemyGroupSpawner.GetComponent<EnemySpawnerSpawning>().SpawnEnemies(4,1);
+			yield return new WaitForSeconds(Random.Range(0.5f,2.5f));
+			EnemyGroupSpawner.GetComponent<EnemySpawnerSpawning>().SpawnEnemies(4,1);
+			yield return new WaitForSeconds(Random.Range(0.5f,2.5f));
 			Next_chapter = true;
 			break;
 		}
@@ -67,6 +73,7 @@ public class Game_Continuity : MonoBehaviour {
 			break;
 		}
 		case 5: {
+			grid = true;
 			EnemyGridSpawner.GetComponent<EnemyGroupSpawner>(). GenerateSingleEnemyGroup(0, 6);
 			//Next_chapter = true;
 			break;

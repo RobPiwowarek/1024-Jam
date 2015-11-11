@@ -4,14 +4,14 @@ using System.Collections;
 public class EnemySpawnerSpawning : MonoBehaviour {
 
 	public GameObject[] Enemies = new GameObject[10];
-	// Use this for initialization
 
-	void SpawnEnemies(int quantity, int type){
+
+	public void SpawnEnemies(int quantity, int type){
 
 		switch (type) {
 		case 1:{
 			while(quantity>0){
-				Instantiate(Enemies[(int)Random.Range(0.0f,3.0f)],transform.position,Quaternion.identity);
+				Instantiate(Enemies[(int)Random.Range(0.0f,3.0f)],new Vector2(Random.Range(-8.0f,8.0f),transform.position.y),Quaternion.identity);
 				quantity--;
 
 			}
