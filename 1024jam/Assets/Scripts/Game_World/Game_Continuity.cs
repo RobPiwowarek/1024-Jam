@@ -7,7 +7,7 @@ public class Game_Continuity : MonoBehaviour {
 	public GameObject Messager;
 	public GameObject EnemyGridSpawner;
 	bool Next_chapter = false;
-	// Use this for initialization
+	public GameObject EnemyGroupSpawner;
 
 
 
@@ -41,6 +41,7 @@ public class Game_Continuity : MonoBehaviour {
 			break;
 		}
 		case 1: {
+			int i = time_required;
 
 			Next_chapter = true;
 			break;
@@ -52,7 +53,7 @@ public class Game_Continuity : MonoBehaviour {
 			break;
 		}
 		case 3: {
-			Debug.Log("Chapter 3 working");
+		
 			Next_chapter = true;
 			break;
 		}

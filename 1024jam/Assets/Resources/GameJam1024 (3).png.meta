@@ -1,19 +1,20 @@
 fileFormatVersion: 2
-guid: 2b240ebca1aa5ce4ebc6a2176c2605fa
-timeCreated: 1447097301
+guid: 23c8807123edd024f9992dbfcfea12f4
+timeCreated: 1447260306
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Enemy6
-    21300002: GameJam1024 (2)_0
-    21300004: GameJam1024 (2)_1
-    21300006: GameJam1024 (2)_2
-    21300008: GameJam1024 (2)_3
-    21300010: GameJam1024 (2)_4
-    21300012: GameJam1024 (2)_5
-    21300014: GameJam1024 (2)_6
-    21300016: GameJam1024 (2)_7
-    21300018: GameJam1024 (2)_8
+    21300000: Player
+    21300002: Enemy
+    21300004: Enemy2
+    21300006: Enemy3
+    21300008: Enemy4
+    21300010: Enemy5
+    21300012: Enemy6
+    21300014: Enemy7
+    21300016: Enemy8
+    21300018: Enemy9
+    21300020: Enemy10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -60,67 +61,57 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: GameJam1024 (2)_0
+    - name: Player
       rect:
         serializedVersion: 2
-        x: 0
-        y: 7
-        width: 35
-        height: 20
+        x: 391
+        y: 0
+        width: 23
+        height: 35
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GameJam1024 (2)_1
+    - name: Enemy
       rect:
         serializedVersion: 2
-        x: 39
-        y: 1
-        width: 27
-        height: 33
+        x: 355
+        y: 2
+        width: 25
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GameJam1024 (2)_2
+    - name: Enemy2
       rect:
         serializedVersion: 2
-        x: 74
-        y: 1
-        width: 27
-        height: 33
+        x: 320
+        y: 2
+        width: 25
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GameJam1024 (2)_3
+    - name: Enemy3
       rect:
         serializedVersion: 2
-        x: 109
-        y: 1
-        width: 27
-        height: 33
+        x: 285
+        y: 2
+        width: 25
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GameJam1024 (2)_4
+    - name: Enemy4
       rect:
         serializedVersion: 2
-        x: 144
-        y: 1
-        width: 27
-        height: 33
+        x: 250
+        y: 2
+        width: 25
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GameJam1024 (2)_5
-      rect:
-        serializedVersion: 2
-        x: 179
-        y: 1
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GameJam1024 (2)_6
+    - name: Enemy5
       rect:
         serializedVersion: 2
         x: 214
@@ -128,27 +119,57 @@ TextureImporter:
         width: 27
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GameJam1024 (2)_7
+    - name: Enemy6
       rect:
         serializedVersion: 2
-        x: 249
+        x: 179
         y: 1
         width: 27
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GameJam1024 (2)_8
+    - name: Enemy7
       rect:
         serializedVersion: 2
-        x: 286
-        y: 0
-        width: 23
-        height: 35
+        x: 144
+        y: 1
+        width: 27
+        height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy8
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 1
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy9
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Enemy10
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

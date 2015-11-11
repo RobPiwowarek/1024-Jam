@@ -17,7 +17,14 @@ public class Moving : MonoBehaviour {
 
 
 	void Start () {
-		StartCoroutine ("Descend");
+
+		if (ID > 3) {
+			StartCoroutine ("Descend");
+		} else {
+			StartCoroutine("Rocket");
+
+		}
+
 	}
 	
 	// Update is called once per frame
@@ -44,7 +51,7 @@ public class Moving : MonoBehaviour {
 	IEnumerator Descend()
 	{
 		float w = 0.0f;
-		while (transform.position.y>3) {
+		while (transform.position.y>7) {
 			w = Time.deltaTime*4;
 			transform.position = new Vector2(transform.position.x,transform.position.y-w);
 			yield return null;
@@ -53,6 +60,17 @@ public class Moving : MonoBehaviour {
 		routine = true;
 	}
 
+
+	IEnumerator Rocket()
+	{
+		float w = 10.0f;
+		while (true) {
+			w = Time.deltaTime * 4;
+			transform.position = new Vector2 (transform.position.x, transform.position.y - w);
+			yield return null;
+		}
+
+	}
 
 
 }
