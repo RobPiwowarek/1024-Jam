@@ -57,16 +57,16 @@ public class Game_Continuity : MonoBehaviour {
 			break;
 		}
 		case 4: {
-			Debug.Log("Chapter 4 working1");
+
 			Messager.GetComponent<Messaging>().Message(chapter);
-			Debug.Log("Chapter 4 working2");
+
 			yield return new WaitForSeconds(time_required);
 
 			Next_chapter = true;
 			break;
 		}
 		case 5: {
-			
+			EnemyGridSpawner.GetComponent<EnemyGroupSpawner>(). GenerateSingleEnemyGroup(0, 6);
 			//Next_chapter = true;
 			break;
 		}
