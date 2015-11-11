@@ -7,6 +7,8 @@ public class Menu : MonoBehaviour {
     public bool isPlayButton = false;
     public bool isOptionsButton = false;
     public bool isCreditsButton = false;
+    public Camera newView;
+    public Camera mainCamera;
 
     void OnMouseOver()
     {
@@ -24,7 +26,13 @@ public class Menu : MonoBehaviour {
         else if (isPlayButton)
             Application.LoadLevel(1);
         else if (isOptionsButton) ;
-        else if (isCreditsButton) ;
+        else if (isCreditsButton)
+        {
+            newView.gameObject.SetActive(true);
+            mainCamera.gameObject.SetActive(false);
+            OnMouseExit();
+        }
+
 
     }
 }
