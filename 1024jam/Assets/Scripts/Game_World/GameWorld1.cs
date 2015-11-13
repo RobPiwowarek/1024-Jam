@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Game_World_1 : MonoBehaviour {
+public class GameWorld1 : MonoBehaviour {
 
 	// Use this for initialization
 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Game_Continuity : MonoBehaviour {
+public class GameContinuity : MonoBehaviour {
 	public int chapter = 0;
 	public float[] times_required = new float[6] {3.0f, 0.0f, 3.0f, 0.0f, 4.0f, 0.0f};
 	public GameObject Messager;
@@ -10,11 +10,8 @@ public class Game_Continuity : MonoBehaviour {
 	public GameObject EnemyGroupSpawner;
 	public bool grid = false;
 
-
-
 	void Start () {
 		StartCoroutine ("History", times_required[chapter]);
-
 	}
 	
 	// Update is called once per frame
@@ -43,11 +40,11 @@ public class Game_Continuity : MonoBehaviour {
 		}
 		case 1: {
 			int i = (int)time_required;
-			EnemyGroupSpawner.GetComponent<EnemySpawnerSpawning>().SpawnEnemies(4,1);
+			EnemyGroupSpawner.GetComponent<EnemySpawner>().SpawnEnemies(4,1);
 			yield return new WaitForSeconds(Random.Range(0.5f,2.5f));
-			EnemyGroupSpawner.GetComponent<EnemySpawnerSpawning>().SpawnEnemies(4,1);
+			EnemyGroupSpawner.GetComponent<EnemySpawner>().SpawnEnemies(4,1);
 			yield return new WaitForSeconds(Random.Range(0.5f,2.5f));
-			EnemyGroupSpawner.GetComponent<EnemySpawnerSpawning>().SpawnEnemies(4,1);
+			EnemyGroupSpawner.GetComponent<EnemySpawner>().SpawnEnemies(4,1);
 			yield return new WaitForSeconds(Random.Range(0.5f,2.5f));
 			Next_chapter = true;
 			break;

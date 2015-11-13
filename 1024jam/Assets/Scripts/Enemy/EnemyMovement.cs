@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Moving : MonoBehaviour {
+public class EnemyMovement : MonoBehaviour {
 	public int ID = 0;
 	public float smoothness = 1;
 	bool routine = false;

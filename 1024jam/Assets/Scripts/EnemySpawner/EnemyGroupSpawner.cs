@@ -5,34 +5,39 @@ public class EnemyGroupSpawner: MonoBehaviour  {
     const int MAX_X = 8, MAX_Y = 24, MIN_X = -8, MIN_Y = 16;
     public bool[,] grid = new bool[(MAX_X-MIN_X)/2,(MAX_Y-MIN_Y)/2];
     public GameObject[] enemies = new GameObject[10];
+    public GameObject parent;
+
     void Start()
     {
-        clearGrid();
+        ClearGrid();
         //GenerateSingleEnemyGroup(0, 6);
     }
 
-    // give model enemy spread and corresponding enemy id and this should create
-    // such enemy group
+    // given positions(spread array) and IDs, create a specific group.
     public void GenerateSpecificGroup(bool[,] positions, int[,] ids)
     {
-        clearGrid();
+        ClearGrid();
         for (int x = 0; x < 8; x++)
             for (int y = 0; y < 4; y++)
             {
                 if (positions[x, y])
-                    Instantiate(enemies[ids[x, y]], new Vector3(2*x-7, 2*y+1), Quaternion.identity);
+                {
+                    GameObject temp;
+                    temp = Instantiate(enemies[ids[x, y]], new Vector3(2 * x - 7, 2 * y + 1), Quaternion.identity) as GameObject;
+                    temp.transform.parent = parent.transform;
+                }
             }
     }         
 
     public void GenerateRandomEnemyGroup(int number)
     {
-        clearGrid();
+        ClearGrid();
         for (int i = 0; i < number; i++)
         {
             int z = Random.Range(0, 10+1);
             GenerateSingleEnemyGroup(z, 1);
         }
-        clearGrid();
+        ClearGrid();
     }
 
     // use clearGrid() after this method
@@ -41,14 +46,16 @@ public class EnemyGroupSpawner: MonoBehaviour  {
         int i = 0;
         while (i < number)
         {
-            int x = selectXValue();
-            int y = selectYValue();
+            int x = SelectXValue();
+            int y = SelectYValue();
 
-            if (isGridFull((x + 7) / 2, (y - 1) / 2))
+            if (IsGridFull((x + 7) / 2, (y - 1) / 2))
                 continue;
             else
             {
-                Instantiate(enemies[id], new Vector3(x, y), Quaternion.identity);
+                GameObject temp;
+                temp = Instantiate(enemies[id], new Vector3(x, y), Quaternion.identity) as GameObject;
+                temp.transform.parent = parent.transform;
                 grid[(x+7)/2, (y-1)/2] = true;
                 ++i;
             }
@@ -56,14 +63,14 @@ public class EnemyGroupSpawner: MonoBehaviour  {
         }   
     }
 
-    void clearGrid()
+    void ClearGrid()
     {
         for (int i = 0; i < 8; i++)
             for (int j = 0; j < 4; j++)
                 grid[i, j] = false;
     }
 
-    bool isGridFull(int x, int y)
+    bool IsGridFull(int x, int y)
     {
         if (grid[x,y] == true)
             return true;
@@ -71,7 +78,7 @@ public class EnemyGroupSpawner: MonoBehaviour  {
             return false;
     }
 
-    int selectYValue()
+    int SelectYValue()
     {
         int y = Random.Range(0, 4);
 
@@ -81,7 +88,7 @@ public class EnemyGroupSpawner: MonoBehaviour  {
         return y;
     }
 
-    int selectXValue()
+    int SelectXValue()
     {
         int x = Random.Range(MIN_X, MAX_X + 1);
 
