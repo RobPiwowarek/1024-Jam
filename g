@@ -1,2 +1,0 @@
-g
-dupa czy cokolwiek

@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameContinuity : MonoBehaviour {
+public class GameProgress : MonoBehaviour {
 	public int chapter = 0;
 	public float[] times_required = new float[6] {3.0f, 0.0f, 3.0f, 0.0f, 4.0f, 0.0f};
 	public GameObject Messager;
 	public GameObject EnemyGridSpawner;
-	bool Next_chapter = false;
+	bool nextChapter = false;
 	public GameObject EnemyGroupSpawner;
 	public bool grid = false;
 
@@ -16,9 +16,8 @@ public class GameContinuity : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Next_chapter) {
-
-			Next_chapter = false;
+		if (nextChapter) {
+			nextChapter = false;
 			chapter++;
             Debug.Log("Chapter: " + chapter); 
 			if(chapter<=5){
@@ -35,7 +34,7 @@ public class GameContinuity : MonoBehaviour {
 		case 0:{
 			Messager.GetComponent<Messaging>().Message(chapter);
 			yield return new WaitForSeconds(time_required);
-			Next_chapter = true;
+			nextChapter = true;
 			break;
 		}
 		case 1: {
@@ -46,18 +45,18 @@ public class GameContinuity : MonoBehaviour {
 			yield return new WaitForSeconds(Random.Range(0.5f,2.5f));
 			EnemyGroupSpawner.GetComponent<EnemySpawner>().SpawnEnemies(4,1);
 			yield return new WaitForSeconds(Random.Range(0.5f,2.5f));
-			Next_chapter = true;
+			nextChapter = true;
 			break;
 		}
 		case 2: {
 			Messager.GetComponent<Messaging>().Message(chapter);
 			yield return new WaitForSeconds(time_required);
-			Next_chapter = true;
+			nextChapter = true;
 			break;
 		}
 		case 3: {
 		
-			Next_chapter = true;
+			nextChapter = true;
 			break;
 		}
 		case 4: {
@@ -66,7 +65,7 @@ public class GameContinuity : MonoBehaviour {
 
 			yield return new WaitForSeconds(time_required);
 
-			Next_chapter = true;
+			nextChapter = true;
 			break;
 		}
 		case 5: {
