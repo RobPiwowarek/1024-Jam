@@ -27,6 +27,8 @@ public class EnemyGroupSpawner: MonoBehaviour  {
                     temp.transform.parent = parent.transform;
                 }
             }
+
+		parent.GetComponent<GroupParentMovement> ().BeginGridMovement ();
     }         
 
     public void GenerateRandomEnemyGroup(int number)
@@ -60,7 +62,8 @@ public class EnemyGroupSpawner: MonoBehaviour  {
                 ++i;
             }
 
-        }   
+        }  
+		parent.GetComponent<GroupParentMovement> ().BeginGridMovement ();
     }
 
     void ClearGrid()

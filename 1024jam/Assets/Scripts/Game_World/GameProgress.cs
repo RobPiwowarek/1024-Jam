@@ -19,12 +19,12 @@ public class GameProgress : MonoBehaviour {
 		if (nextChapter) {
 			nextChapter = false;
 			chapter++;
-            Debug.Log("Chapter: " + chapter); 
+            //Debug.Log("Chapter: " + chapter); 
 			if(chapter<=5){
 				StartCoroutine ("History", times_required[chapter]);
 			}
             
-			Debug.Log("NextChapter");
+			//Debug.Log("NextChapter");
 
 		}
 	}
@@ -38,6 +38,7 @@ public class GameProgress : MonoBehaviour {
 			break;
 		}
 		case 1: {
+			/*
 			int i = (int)time_required;
 			EnemyGroupSpawner.GetComponent<EnemySpawner>().SpawnEnemies(4,1);
 			yield return new WaitForSeconds(Random.Range(0.5f,2.5f));
@@ -45,12 +46,17 @@ public class GameProgress : MonoBehaviour {
 			yield return new WaitForSeconds(Random.Range(0.5f,2.5f));
 			EnemyGroupSpawner.GetComponent<EnemySpawner>().SpawnEnemies(4,1);
 			yield return new WaitForSeconds(Random.Range(0.5f,2.5f));
+			*/
 			nextChapter = true;
+
 			break;
 		}
 		case 2: {
+			/*
 			Messager.GetComponent<Messaging>().Message(chapter);
 			yield return new WaitForSeconds(time_required);
+
+			*/
 			nextChapter = true;
 			break;
 		}
@@ -60,12 +66,13 @@ public class GameProgress : MonoBehaviour {
 			break;
 		}
 		case 4: {
-
+/*
 			Messager.GetComponent<Messaging>().Message(chapter);
 
 			yield return new WaitForSeconds(time_required);
-
+*/
 			nextChapter = true;
+
 			break;
 		}
 		case 5: {

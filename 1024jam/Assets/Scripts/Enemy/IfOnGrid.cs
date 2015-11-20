@@ -6,7 +6,7 @@ public class IfOnGrid : MonoBehaviour {
 	void Awake () {
 		if (GameObject.FindGameObjectWithTag("GW").GetComponent<GameProgress>().grid) {
             this.GetComponent<EnemyMovement>().enabled = false;
-            Debug.Log(GetComponent<EnemyMovement>().enabled);
+            //Debug.Log(GetComponent<EnemyMovement>().enabled);
 		}
 	}
 
