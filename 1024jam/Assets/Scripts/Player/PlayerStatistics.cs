@@ -1,11 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerStatistics : MonoBehaviour {
+public class PlayerStatistics: MonoBehaviour {
+    int score = 0;
     int lives = 3;
     int horizontalSpeed = 1000;
     bool reversed = false;
     bool immune = false;
+    public GameObject textScore;
+    public GameObject livesScore;
+
+    void Start()
+    {
+        UpdateScore(score);
+        UpdateLives();
+    }
+
+    void UpdateLives()
+    {
+        if (lives < 0)
+            lives = 0;
+
+        livesScore.GetComponent<TextMesh>().text = "LIVES: " + lives;
+    }
+
+    public void UpdateScore(int points){
+        score += points;
+        textScore.GetComponent<TextMesh>().text = "SCORE: " + score;
+    }
 
     public void Death()
     {
@@ -17,6 +39,7 @@ public class PlayerStatistics : MonoBehaviour {
     public bool DealDamage(int amount = 1){
         if (!immune){
             lives -= amount;
+            UpdateLives();
             if (lives <= 0){
                 Death();
                 return true;

@@ -2,11 +2,18 @@
 using System.Collections;
 
 public class Death : MonoBehaviour {
+    PlayerStatistics player;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatistics>();
+    }
 
 	void OnTriggerEnter2D(Collider2D col){
         if ((col != null)){
             MissileMovement mov = col.gameObject.GetComponent<MissileMovement>();
             if ((mov != null) && (this.GetComponent<EnemyMovement>().ID == mov.ID)){
+                player.UpdateScore(10);
                 Destroy(col.gameObject);
                 Destroy(this.gameObject);
             }
