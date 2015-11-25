@@ -13,9 +13,11 @@ public class Death : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col){
         if ((col != null)){
+
             MissileMovement mov = col.gameObject.GetComponent<MissileMovement>();
             if ((mov != null) && (this.GetComponent<EnemyMovement>().ID == mov.ID)){
-                player.UpdateScore(10);
+				Debug.Log("ASDF");
+                //player.UpdateScore(10);
                 Destroy(col.gameObject);
 				Instantiate(Enemy_Pieces,transform.position,Quaternion.identity);
                 Destroy(this.gameObject);
