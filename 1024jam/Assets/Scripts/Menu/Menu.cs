@@ -10,6 +10,11 @@ public class Menu : MonoBehaviour {
     public Camera newView;
     public Camera mainCamera;
 
+    void OnMouseEnter()
+    {
+        GetComponent<AudioSource>().Play();
+    }
+    
     void OnMouseOver()
     {
         GetComponent<TextMesh>().color = new Color(255, 0, 0);

@@ -2,6 +2,12 @@
 using System.Collections;
 
 public class Death : MonoBehaviour {
+    PlayerStatistics player;
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatistics>();
+    }
 
 	public GameObject Enemy_Pieces;
 
@@ -9,6 +15,7 @@ public class Death : MonoBehaviour {
         if ((col != null)){
             MissileMovement mov = col.gameObject.GetComponent<MissileMovement>();
             if ((mov != null) && (this.GetComponent<EnemyMovement>().ID == mov.ID)){
+                player.UpdateScore(10);
                 Destroy(col.gameObject);
 				Instantiate(Enemy_Pieces,transform.position,Quaternion.identity);
                 Destroy(this.gameObject);

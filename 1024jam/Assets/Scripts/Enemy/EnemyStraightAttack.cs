@@ -13,7 +13,5 @@ public class EnemyStraightAttack : MonoBehaviour {
             nextAttack = Time.time + cooldownInSeconds;
             Instantiate(missile, new Vector3(transform.position.x, transform.position.y - 1), Quaternion.identity);
         }
-        
-
 	}
 }
