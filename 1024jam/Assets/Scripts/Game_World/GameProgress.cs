@@ -3,8 +3,9 @@ using System.Collections;
 
 public class GameProgress : MonoBehaviour {
 	public int chapter = 0;
-	public float[] times_required = new float[6] {3.0f, 0.0f, 3.0f, 0.0f, 4.0f, 0.0f};
+	public float[] times_required = new float[7] {3.0f, 0.0f, 3.0f, 0.0f, 4.0f, 0.0f, 15.0f};
 	public GameObject Messager;
+	public GameObject Mothership;
 	public GameObject EnemyGridSpawner;
 	bool nextChapter = false;
 	public GameObject EnemyGroupSpawner;
@@ -17,15 +18,14 @@ public class GameProgress : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (nextChapter) {
-			nextChapter = false;
-			chapter++;
-            //Debug.Log("Chapter: " + chapter); 
-			if(chapter<=5){
-				StartCoroutine ("History", times_required[chapter]);
-			}
+			nextChapter = false;		
             
+			if(chapter<=5){
+				chapter++;
+				Debug.Log("Chapter: " + chapter); 
+				StartCoroutine ("History", times_required[chapter]);
+			}            
 			//Debug.Log("NextChapter");
-
 		}
 	}
 
@@ -78,6 +78,13 @@ public class GameProgress : MonoBehaviour {
 		case 5: {
 			grid = true;
 			EnemyGridSpawner.GetComponent<EnemyGroupSpawner>(). GenerateSingleEnemyGroup(0, 6);
+
+			nextChapter = true;
+			break;
+		}
+		case 6: {
+			grid = false;
+			Instantiate(Mothership,new Vector2(0.0f,16.0f),Quaternion.identity);
 			//Next_chapter = true;
 			break;
 		}

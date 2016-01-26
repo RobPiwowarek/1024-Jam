@@ -19,6 +19,7 @@ public class MothershipMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		transform.position = new Vector2(0.0f,16.0f);
 		StartCoroutine ("Mothership_Descend");
 	}
 
@@ -54,13 +55,13 @@ public class MothershipMovement : MonoBehaviour {
 		}
 
 		case 1:{
-			target = new Vector2(0.0f,15.0f);
+			target = new Vector2(0.0f,16.0f);
 			while(Vector2.Distance(transform.position,target)>treshold){
 				transform.position = Vector2.Lerp(transform.position,target,Time.deltaTime*smoothness*3.0f);
 				yield return null;
 			}
 
-			Instantiate(Mine,new Vector2(transform.position.x,transform.position.y),Quaternion.identity);
+			//Instantiate(Mine,new Vector2(transform.position.x,transform.position.y),Quaternion.identity);
 
 			yield return new WaitForSeconds(1.0f);
 			target = new Vector2(Random.Range(-1.16f,1.16f),Random.Range(4.0f,7.0f));
@@ -79,7 +80,7 @@ public class MothershipMovement : MonoBehaviour {
 
 		}
 
-		FightScenario = Random.Range (0,1);
+		FightScenario = Random.Range (0,2);
 		StartCoroutine ("Mothership_Fight");
 		}
 }
