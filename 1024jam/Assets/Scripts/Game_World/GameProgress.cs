@@ -10,9 +10,11 @@ public class GameProgress : MonoBehaviour {
 	bool nextChapter = false;
 	public GameObject EnemyGroupSpawner;
 	public bool grid = false;
+	public GameObject GroupParent;
+
 
 	void Start () {
-		StartCoroutine ("History", times_required[chapter]);
+		StartCoroutine ("History");
 	}
 	
 	// Update is called once per frame
@@ -23,17 +25,17 @@ public class GameProgress : MonoBehaviour {
 			if(chapter<=5){
 				chapter++;
 				Debug.Log("Chapter: " + chapter); 
-				StartCoroutine ("History", times_required[chapter]);
+				StartCoroutine ("History");
 			}            
 			//Debug.Log("NextChapter");
 		}
 	}
 
-	IEnumerator History(float time_required){
+	IEnumerator History(){
 		switch (chapter) {
 		case 0:{
-			Messager.GetComponent<Messaging>().Message(chapter);
-			yield return new WaitForSeconds(time_required);
+			//Messager.GetComponent<Messaging>().Message(chapter);
+			yield return new WaitForSeconds(times_required[chapter]);
 			nextChapter = true;
 			break;
 		}
@@ -76,15 +78,25 @@ public class GameProgress : MonoBehaviour {
 			break;
 		}
 		case 5: {
+			if(grid == false){
 			grid = true;
 			EnemyGridSpawner.GetComponent<EnemyGroupSpawner>(). GenerateSingleEnemyGroup(0, 6);
-
+			}
+			while (!GroupParent.GetComponent<GroupParentMovement>().GridIsEmpty){
+				Debug.Log ("Check grid...");
+				yield return new WaitForSeconds(2.0f);
+				yield return null;
+			}
 			nextChapter = true;
+			grid = false;
 			break;
 		}
 		case 6: {
-			grid = false;
+
+
+
 			Instantiate(Mothership,new Vector2(0.0f,16.0f),Quaternion.identity);
+
 			//Next_chapter = true;
 			break;
 		}
