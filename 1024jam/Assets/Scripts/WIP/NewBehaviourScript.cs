@@ -3,7 +3,6 @@ using System.Collections;
 
 public class NewBehaviourScript : MonoBehaviour {
     public GameObject parent;
-    float _angle = 0.05f;
 
     void Update()
     {
